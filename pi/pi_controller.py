@@ -11,7 +11,7 @@ def joy_direction():
     send_vel = False
     while True:
         for event in sense.stick.get_events():
-            if event.action == "pressed":
+            if event.action == "held" or event.action == "pressed":
                 if event.direction =="up":
                     click.echo('Up')
                     send_vel = True
@@ -21,7 +21,7 @@ def joy_direction():
                     click.echo('Up')
                     send_vel = True
                     d_long = 0
-                    d_la = 1    
+                    d_la = -1    
                 elif event.direction == "left":
                     click.echo('Left')
                     send_vel = True
